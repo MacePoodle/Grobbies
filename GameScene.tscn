@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Code/Grid.gd" type="Script" id=1]
-[ext_resource path="res://Art/Backgrounds/background_alpha_1.png" type="Texture" id=2]
+[ext_resource path="res://Art/Backgrounds/main_bg.png" type="Texture" id=2]
+[ext_resource path="res://Art/Backgrounds/grid_overlay.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/HelvetiPixel.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 180
+font_data = ExtResource( 4 )
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2( 0.5, 0.5 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect_Background" type="TextureRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 2 )
@@ -15,8 +22,67 @@ __meta__ = {
 
 [node name="Grid" type="Node2D" parent="."]
 script = ExtResource( 1 )
-width = 9
-height = 6
-x_start = 110
-y_start = 700
-offset = 110
+width = 6
+height = 4
+x_start = 450
+y_start = 1350
+offset = 315
+
+[node name="TextureRect_Overlay" type="TextureRect" parent="Grid"]
+margin_right = 2480.0
+margin_bottom = 3508.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 46.0
+margin_top = 2846.0
+margin_right = 972.0
+margin_bottom = 3000.0
+custom_fonts/font = SubResource( 1 )
+text = "Grobbie Debug"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SEPERATOR" type="Label" parent="Control"]
+margin_left = 46.0
+margin_top = 2868.0
+margin_right = 994.0
+margin_bottom = 3022.0
+custom_fonts/font = SubResource( 1 )
+text = "____________"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R - Restart" type="Label" parent="Control"]
+margin_left = 48.0
+margin_top = 3002.0
+margin_right = 996.0
+margin_bottom = 3156.0
+custom_fonts/font = SubResource( 1 )
+text = "R: Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R - Restart2" type="Label" parent="Control"]
+margin_left = 48.0
+margin_top = 3112.0
+margin_right = 996.0
+margin_bottom = 3266.0
+custom_fonts/font = SubResource( 1 )
+text = "F: Fade Grid"
+__meta__ = {
+"_edit_use_anchors_": false
+}

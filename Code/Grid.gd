@@ -1,5 +1,8 @@
 extends Node2D
 
+onready var gridOverlay = $TextureRect_Overlay 
+
+
 #Grid Variables
 export (int) var width
 export (int) var height
@@ -7,10 +10,14 @@ export (int) var x_start
 export (int) var y_start
 export (int) var offset
 
-
+#Grobbies
 var possible_grobbies = [
 	preload('res://Scenes/Grobbies/Orange_Grobbie.tscn'),
-	preload('res://Scenes/Grobbies/Purple_Grobbie.tscn')
+	preload('res://Scenes/Grobbies/Purple_Grobbie.tscn'),
+	preload('res://Scenes/Grobbies/Yellow_Grobbie.tscn'),
+	preload('res://Scenes/Grobbies/Red_Grobbie.tscn'),
+	preload('res://Scenes/Grobbies/Blue_Grobbie.tscn'),
+	preload('res://Scenes/Grobbies/Green_Grobbie.tscn')
 ]
 
 var all_grobbies = []
@@ -46,6 +53,13 @@ func spawn_grobbies():
 			var grobbie = possible_grobbies[rand].instance()
 			add_child(grobbie)
 			grobbie.position = grid_to_pixel(i,j)
+			all_grobbies[i][j] =  grobbie
+
+#func match_at(column, row, color):
+	#if j > 1:
+#		if all_grobbies[i-1][j] != null && all_grobbies[i-2][j] != null:
+#			pass
+			
 
 func grid_to_pixel(column, row):
 	var new_x = x_start + offset * column
@@ -53,7 +67,16 @@ func grid_to_pixel(column, row):
 	return Vector2(new_x, new_y)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+func _process(delta):
 #	pass
-
+	if Input.is_action_just_pressed("ui_touch"):
+		y_start = y_start + 1260
+		spawn_grobbies()
+		
+	if Input.is_action_just_pressed("debug_restart"):
+		get_tree().reload_current_scene()
+	
+	if Input.is_action_just_pressed("debug_fadegrid"):
+		#lerp oppasity on grid texture
+		gridOverlay.visible = !gridOverlay.visible
 
