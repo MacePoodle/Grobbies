@@ -22,13 +22,14 @@ __meta__ = {
 
 [node name="Grid" type="Node2D" parent="."]
 script = ExtResource( 1 )
-width = 6
-height = 4
-x_start = 450
-y_start = 1350
-offset = 315
+width = 9
+height = 10
+x_start = 345
+y_start = 2400
+offset = 225
 
 [node name="TextureRect_Overlay" type="TextureRect" parent="Grid"]
+visible = false
 margin_right = 2480.0
 margin_bottom = 3508.0
 texture = ExtResource( 3 )
@@ -77,6 +78,7 @@ __meta__ = {
 }
 
 [node name="R - Restart2" type="Label" parent="Control"]
+visible = false
 margin_left = 48.0
 margin_top = 3112.0
 margin_right = 996.0
