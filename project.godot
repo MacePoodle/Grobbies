@@ -21,7 +21,7 @@ window/size/height=1754
 window/size/test_width=620
 window/size/test_height=877
 window/stretch/mode="2d"
-window/stretch/aspect="keep_width"
+window/stretch/aspect="expand"
 
 [input]
 
@@ -40,6 +40,11 @@ debug_fadegrid={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+debug_toggle={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":84,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 
@@ -47,7 +52,6 @@ common/enable_pause_aware_picking=true
 2d/physics_engine="GodotPhysics"
 2d/use_bvh=false
 2d/default_gravity=750
-2d/default_gravity_vector=Vector2( 0, -1 )
 
 [rendering]
 

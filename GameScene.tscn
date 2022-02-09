@@ -32,6 +32,7 @@ y_start = 1344
 offset = 128
 
 [node name="TextureRect_Overlay" type="TextureRect" parent="Grid"]
+visible = false
 margin_right = 2480.0
 margin_bottom = 3508.0
 texture = ExtResource( 3 )
@@ -91,4 +92,4 @@ __meta__ = {
 }
 
 [node name="Fluid_Grid" parent="." instance=ExtResource( 5 )]
-position = Vector2( 118, 231 )
+position = Vector2( 108, 272 )
