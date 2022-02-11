@@ -19,12 +19,12 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("debug_toggle"):
-		#pass
+		pass
 		#PauseMode
 		#able = !able
 	
 		#Destroy Mode
-		self.queue_free()
+		#self.queue_free()
 
 func _physics_process(delta):
 	#self.axis_lock_motion_x = true
