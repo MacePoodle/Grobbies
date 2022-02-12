@@ -1,24 +1,27 @@
 
 extends KinematicBody2D
+
+#Movement Constants
 var GRAVITY = -750.0
 var velocity = Vector2()
-
 var able = true
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-#Ready Self Components
 onready var raycast = $RayCast2D
 
+#Location Variables   -- TODO MAKE A COLLIDER LAYER, MAKE A COLLIDER ON THE GRID, MAKE A RAY CAST TO DETECT, PRINT
+var RowPosition : int
+var ColPosition : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 	raycast.cast_to.y = -75
+	print(RowPosition)
 
 func _process(delta):
+	print(RowPosition)
+	print(ColPosition)
 	if Input.is_action_just_pressed("debug_toggle"):
+		
 		#pass
 		#PauseMode
 		#able = !able
