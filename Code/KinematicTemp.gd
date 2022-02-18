@@ -2,6 +2,7 @@
 extends KinematicBody2D
 var GRAVITY = -750.0
 var velocity = Vector2()
+var CurrentPosition = Vector2()
 
 var able = true
 # Declare member variables here. Examples:
@@ -18,8 +19,33 @@ func _ready():
 	raycast.cast_to.y = -75
 
 func _process(delta):
-	if Input.is_action_just_pressed("debug_toggle"):
-		pass
+	pass
+#	CurrentPosition = get_position()
+#
+#
+#	if get_node('RayCast2D').is_colliding():
+#		self.able = false
+#	if !get_node('RayCast2D').is_colliding():
+#		self.able = true
+#
+#	if able:
+#		velocity.y += delta * GRAVITY
+#		#velocity.x += delta * GRAVITY
+#		var collision = move_and_collide(velocity * delta)
+#
+#		#var motion = velocity * delta
+#	if !able:
+#		velocity.y = 0
+#		velocity.x = 0
+#
+#
+#
+#	if !able:
+#		self.transform.origin.x = CurrentPosition.x 
+#		self.transform.origin.y = CurrentPosition.y 
+#
+#	if Input.is_action_just_pressed("debug_toggle"):
+#		pass
 		#PauseMode
 		#able = !able
 	
@@ -27,10 +53,17 @@ func _process(delta):
 		#self.queue_free()
 
 func _physics_process(delta):
-	#self.axis_lock_motion_x = true
+	CurrentPosition = get_position()
+	
+	if get_node('RayCast2D').is_colliding():
+		self.able = false
+	if !get_node('RayCast2D').is_colliding():
+		self.able = true
+		
 	if able:
 		velocity.y += delta * GRAVITY
 		#velocity.x += delta * GRAVITY
+		var collision = move_and_collide(velocity * delta)
 		
 		#var motion = velocity * delta
 	if !able:
@@ -38,33 +71,35 @@ func _physics_process(delta):
 		velocity.x = 0
 	
 	
-	# Using move_and_collide.
-	var collision = move_and_collide(velocity * delta)
-#	if collision:
-#		#pass
+	
+	if !able:
+		self.transform.origin.x = CurrentPosition.x 
+		self.transform.origin.y = CurrentPosition.y 
+
+
+	
+	#self.axis_lock_motio\n_x = true
+#	CurrentPosition = get_position()
+#
+#
+#	if get_node('RayCast2D').is_colliding():
 #		self.able = false
-#	if !collision:
-#		#pass
+#	if !get_node('RayCast2D').is_colliding():
 #		self.able = true
-	
-	if get_node('RayCast2D').is_colliding():
-		self.able = false
-	if !get_node('RayCast2D').is_colliding():
-		self.able = true
-		
-	
-	
-		#GREGIE TODO: THIS PREKS WHEN WE UNPAUSE, OBJECTS WITH SAME CONFIG COULD MOVE 1PXl, UPDATE SODE SO IT ONLY becomes ABLE to opects with no NORTH RAYCAST SIGNAL.  
-		
-		
+#
+#	if able:
+#		velocity.y += delta * GRAVITY
+#		#velocity.x += delta * GRAVITY
+#		var collision = move_and_collide(velocity * delta)
+#
+#		#var motion = velocity * delta
+#	if !able:
+#		velocity.y = 0
+#		velocity.x = 0
+	# Using move_and_collide.
 	#var collision = move_and_collide(velocity * delta)
-	#if collision:
-	#	GRAVITY = 0
-		#print("I collided with ", collision.collider.name)
-#		velocity.y = 0 * delta
-#		velocity.x = 0 * delta
-#		move_and_collide(velocity * delta)
-	
-#	set_physics_process(false
-	#if is_on_floor():
-	#	pause_mode = Node.PAUSE_MODE_STOP	
+#	
+	#Extend Not Able to fix petruding intersections due to velicity
+#	if !able:
+#		self.transform.origin.x = CurrentPosition.x 
+#		self.transform.origin.y = CurrentPosition.y 
