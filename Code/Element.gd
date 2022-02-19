@@ -14,7 +14,7 @@ var GRAVITY = -750.0
 var velocity = Vector2()
 var able = true
 
-
+var restPosition = Vector2.ZERO
 
 #Raycast Variables
 var CollisionDetectionRaycastLength = -75
@@ -34,54 +34,39 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("debug_toggle"):
-		print(RowPosition)
-		print(ColPosition)
-		#pass
-		#PauseMode
-		#able = !able
-	
+#		print(RowPosition)
+#		print(ColPosition)
+#		print(restPosition.x)	
+#		print(restPosition.y)
+		self.position.x = restPosition.x
+		self.position.y = restPosition.y
+#
 		#Destroy Mode
-		self.queue_free()
+		#self.queue_free()
 
 func _physics_process(delta):
-	#self.axis_lock_motion_x = true
+	
+	
+	
 	if able:
 		velocity.y += delta * GRAVITY
 		#velocity.x += delta * GRAVITY
-		
-		#var motion = velocity * delta
+
 	if !able:
 		velocity.y = 0
 		velocity.x = 0
 	
-	
-	# Using move_and_collide.
 	var collision = move_and_collide(velocity * delta)
-#	if collision:
-#		#pass
-#		self.able = false
-#	if !collision:
-#		#pass
-#		self.able = true
 	
+	#HANDLE COLLSION
 	if get_node('RayCast2D').is_colliding():
 		self.able = false
+		
+		#NOW CORRECT FOR WEIRD COLLISION OVERSHOOT ANNOYANCE DUE TO FRAMERATE
+		##get_node('RayCast2D').get_collider()
+		###USE AREA BODY COLLISION WITH ROW/COL AREA BODY AND THEN USE THEIR 
+		
+		
 	if !get_node('RayCast2D').is_colliding():
 		self.able = true
-		
-	
-	
-		#GREGIE TODO: THIS BREARS WHEN WE UNPAUSE, OBJECTS WITH SAME CONFIG COULD MOVE 1PXl, UPDATE SODE SO IT ONLY becomes ABLE to opects with no NORTH RAYCAST SIGNAL.  
-		
-		
-	#var collision = move_and_collide(velocity * delta)
-	#if collision:
-	#	GRAVITY = 0
-		#print("I collided with ", collision.collider.name)
-#		velocity.y = 0 * delta
-#		velocity.x = 0 * delta
-#		move_and_collide(velocity * delta)
-	
-#	set_physics_process(false
-	#if is_on_floor():
-	#	pause_mode = Node.PAUSE_MODE_STOP	
+

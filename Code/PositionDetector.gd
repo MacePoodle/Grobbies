@@ -27,5 +27,8 @@ func _on_Area2D_12_body_entered(body):
 	#Set The Grobbies curent Row and Column number.
 	body.RowPosition = row
 	body.ColPosition = col
+	body.restPosition.x = self.position.x
+	body.restPosition.y = self.position.y
+	
 	#TODO Read VAriable From Grobbie
 	#TODO Set Variable To Grobbie
