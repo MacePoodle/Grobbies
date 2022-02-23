@@ -61,6 +61,8 @@ func _physics_process(delta):
 	#HANDLE COLLSION
 	if get_node('RayCast2D').is_colliding():
 		self.able = false
+		self.position.x = restPosition.x
+		self.position.y = restPosition.y
 		
 		#NOW CORRECT FOR WEIRD COLLISION OVERSHOOT ANNOYANCE DUE TO FRAMERATE
 		##get_node('RayCast2D').get_collider()

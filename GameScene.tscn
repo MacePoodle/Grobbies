@@ -4,7 +4,7 @@
 [ext_resource path="res://Art/Backgrounds/main_bg.png" type="Texture" id=2]
 [ext_resource path="res://Art/Backgrounds/grid_overlay.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/HelvetiPixel.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Scenes/Fluid_Grid.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/AdamGreg_Container_Grid.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 90
@@ -38,6 +38,9 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Fluid_Grid2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 112, 256 )
 
 [node name="Control" type="Control" parent="."]
 margin_left = 300.0
@@ -92,6 +95,3 @@ text = "T: Correct Position"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Fluid_Grid" parent="." instance=ExtResource( 5 )]
-position = Vector2( 108, 272 )

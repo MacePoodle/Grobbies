@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Code/AG_GrobbieScript.gd" type="Script" id=1]
+[ext_resource path="res://Code/EXPLOSIVE_TEMP.gd" type="Script" id=2]
+[ext_resource path="res://Art/Debug/Fluid_Grid_Marker.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 576, 60 )
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 64.0
+
+[node name="Fluid_Grid" type="Node2D"]
+
+[node name="Roof_Debug" type="Position2D" parent="."]
+position = Vector2( 0, -128 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Roof_Debug"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roof_Debug/KinematicBody2D"]
+position = Vector2( 512, 4 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Roof_Debug/KinematicBody2D"]
+modulate = Color( 1, 0.517647, 0.517647, 1 )
+position = Vector2( 512, 0 )
+scale = Vector2( 9, 1 )
+texture = ExtResource( 3 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 0, 464 )
+script = ExtResource( 1 )
+TOPSPEED = Vector2( 0, -250 )
+GRAVITY = -50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 6 )
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
+position = Vector2( 0, 936 )
+script = ExtResource( 1 )
+TOPSPEED = Vector2( 0, -250 )
+GRAVITY = -50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
+shape = SubResource( 6 )
+
+[node name="KinematicBody2D3" type="KinematicBody2D" parent="."]
+position = Vector2( 0, 1584 )
+script = ExtResource( 1 )
+TOPSPEED = Vector2( 0, -250 )
+GRAVITY = -50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D3"]
+shape = SubResource( 6 )
+
+[node name="KinematicBody2D4" type="KinematicBody2D" parent="."]
+position = Vector2( 128, 2176 )
+script = ExtResource( 1 )
+TOPSPEED = Vector2( 0, -250 )
+GRAVITY = -50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D4"]
+shape = SubResource( 6 )
+
+[node name="KinematicBody2D5" type="KinematicBody2D" parent="."]
+position = Vector2( 128, 2368 )
+script = ExtResource( 1 )
+TOPSPEED = Vector2( 0, -250 )
+GRAVITY = -50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D5"]
+shape = SubResource( 6 )
+
+[node name="EXPLOSIVE" type="KinematicBody2D" parent="."]
+position = Vector2( 128, 1856 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EXPLOSIVE"]
+shape = SubResource( 6 )

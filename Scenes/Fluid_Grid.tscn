@@ -672,7 +672,7 @@ texture = ExtResource( 3 )
 
 [node name="RayCast2D" type="RayCast2D" parent="NEW_Element"]
 enabled = true
-cast_to = Vector2( 0, -58 )
+cast_to = Vector2( 0, 0 )
 
 [node name="RayCast2D_North" type="RayCast2D" parent="NEW_Element"]
 position = Vector2( 0, -125 )
@@ -691,6 +691,154 @@ position = Vector2( 125, 0 )
 cast_to = Vector2( 5, 0 )
 
 [node name="PositionCheckCollider" type="CollisionShape2D" parent="NEW_Element"]
+shape = SubResource( 4 )
+
+[node name="NEW_Element2" type="KinematicBody2D" parent="."]
+position = Vector2( 256, 3 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape_North" type="CollisionShape2D" parent="NEW_Element2"]
+position = Vector2( 0, 60 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="NEW_Element2"]
+texture = ExtResource( 3 )
+
+[node name="RayCast2D" type="RayCast2D" parent="NEW_Element2"]
+enabled = true
+cast_to = Vector2( 0, -58 )
+
+[node name="RayCast2D_North" type="RayCast2D" parent="NEW_Element2"]
+position = Vector2( 0, -125 )
+cast_to = Vector2( 0, -5 )
+
+[node name="RayCast2D_West" type="RayCast2D" parent="NEW_Element2"]
+position = Vector2( -125, 0 )
+cast_to = Vector2( -5, 0 )
+
+[node name="RayCast2D_South" type="RayCast2D" parent="NEW_Element2"]
+position = Vector2( 0, 125 )
+cast_to = Vector2( 0, 5 )
+
+[node name="RayCast2D_East" type="RayCast2D" parent="NEW_Element2"]
+position = Vector2( 125, 0 )
+cast_to = Vector2( 5, 0 )
+
+[node name="PositionCheckCollider" type="CollisionShape2D" parent="NEW_Element2"]
+shape = SubResource( 4 )
+
+[node name="NEW_Element4" type="KinematicBody2D" parent="."]
+position = Vector2( 128, 128 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape_North" type="CollisionShape2D" parent="NEW_Element4"]
+position = Vector2( 0, 60 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="NEW_Element4"]
+texture = ExtResource( 3 )
+
+[node name="RayCast2D" type="RayCast2D" parent="NEW_Element4"]
+enabled = true
+cast_to = Vector2( 0, -58 )
+
+[node name="RayCast2D_North" type="RayCast2D" parent="NEW_Element4"]
+position = Vector2( 0, -125 )
+cast_to = Vector2( 0, -5 )
+
+[node name="RayCast2D_West" type="RayCast2D" parent="NEW_Element4"]
+position = Vector2( -125, 0 )
+cast_to = Vector2( -5, 0 )
+
+[node name="RayCast2D_South" type="RayCast2D" parent="NEW_Element4"]
+position = Vector2( 0, 125 )
+cast_to = Vector2( 0, 5 )
+
+[node name="RayCast2D_East" type="RayCast2D" parent="NEW_Element4"]
+position = Vector2( 125, 0 )
+cast_to = Vector2( 5, 0 )
+
+[node name="PositionCheckCollider" type="CollisionShape2D" parent="NEW_Element4"]
+shape = SubResource( 4 )
+
+[node name="NEW_Element5" type="KinematicBody2D" parent="."]
+position = Vector2( 128, 2272 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape_North" type="CollisionShape2D" parent="NEW_Element5"]
+position = Vector2( 0, 60 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="NEW_Element5"]
+texture = ExtResource( 3 )
+
+[node name="RayCast2D" type="RayCast2D" parent="NEW_Element5"]
+enabled = true
+cast_to = Vector2( 0, -58 )
+
+[node name="RayCast2D_North" type="RayCast2D" parent="NEW_Element5"]
+position = Vector2( 0, -125 )
+cast_to = Vector2( 0, -5 )
+
+[node name="RayCast2D_West" type="RayCast2D" parent="NEW_Element5"]
+position = Vector2( -125, 0 )
+cast_to = Vector2( -5, 0 )
+
+[node name="RayCast2D_South" type="RayCast2D" parent="NEW_Element5"]
+position = Vector2( 0, 125 )
+cast_to = Vector2( 0, 5 )
+
+[node name="RayCast2D_East" type="RayCast2D" parent="NEW_Element5"]
+position = Vector2( 125, 0 )
+cast_to = Vector2( 5, 0 )
+
+[node name="PositionCheckCollider" type="CollisionShape2D" parent="NEW_Element5"]
+shape = SubResource( 4 )
+
+[node name="NEW_Element3" type="KinematicBody2D" parent="."]
+position = Vector2( 256, 2432 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape_North" type="CollisionShape2D" parent="NEW_Element3"]
+position = Vector2( 0, 60 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="NEW_Element3"]
+texture = ExtResource( 3 )
+
+[node name="RayCast2D" type="RayCast2D" parent="NEW_Element3"]
+enabled = true
+cast_to = Vector2( 0, -58 )
+
+[node name="RayCast2D_North" type="RayCast2D" parent="NEW_Element3"]
+position = Vector2( 0, -125 )
+cast_to = Vector2( 0, -5 )
+
+[node name="RayCast2D_West" type="RayCast2D" parent="NEW_Element3"]
+position = Vector2( -125, 0 )
+cast_to = Vector2( -5, 0 )
+
+[node name="RayCast2D_South" type="RayCast2D" parent="NEW_Element3"]
+position = Vector2( 0, 125 )
+cast_to = Vector2( 0, 5 )
+
+[node name="RayCast2D_East" type="RayCast2D" parent="NEW_Element3"]
+position = Vector2( 125, 0 )
+cast_to = Vector2( 5, 0 )
+
+[node name="PositionCheckCollider" type="CollisionShape2D" parent="NEW_Element3"]
 shape = SubResource( 4 )
 
 [connection signal="body_entered" from="Row1/Area2D 1-1" to="Row1/Area2D 1-1" method="_on_Area2D_12_body_entered"]
