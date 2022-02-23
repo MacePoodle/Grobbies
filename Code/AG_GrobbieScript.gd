@@ -4,14 +4,14 @@ extends KinematicBody2D
 
 export var TOPSPEED : Vector2
 export var DIRECTION : int   #1 = North, 2 = South, 3= East, 4 = West
-export var GRAVITY: int
+export var GRAVITY: int = -100
 
 
 
 #BUILT-IN GODOT FUNCTIONS
 func _ready():
 	pass # Replace with function body.
-	TOPSPEED.y = -750
+	TOPSPEED.y = -850
 
 func _physics_process(delta):
 	#pass
@@ -22,14 +22,17 @@ func _physics_process(delta):
 	if Collision:
 		TOPSPEED.y = 0
 		GRAVITY = 0
-		print("HELLO")
+		#print("COLLING")
 		
-	if !Collision:
-		TOPSPEED.y = -750
-		GRAVITY = -750
-		print("HELLO")
+	
+		#print("NOT COLLIDING")
 		
 	
 	
-#CUSTOM FUNCTION
+#GODOT SIGNAL FUNCTION
 
+func _on_Area2D_body_exited(body):
+	print("BODY HAS EXITED")
+	TOPSPEED.y = -850
+	GRAVITY = -10
+	

@@ -4,14 +4,14 @@ extends KinematicBody2D
 
 export var TOPSPEED : Vector2
 export var DIRECTION : int   #1 = North, 2 = South, 3= East, 4 = West
-export var GRAVITY: int
+export var GRAVITY: int = -10
 
 
 
 #BUILT-IN GODOT FUNCTIONS
 func _ready():
 	pass # Replace with function body.
-	TOPSPEED.y = -750
+	TOPSPEED.y = -850
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("debug_toggle"):
