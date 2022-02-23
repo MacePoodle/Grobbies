@@ -17,6 +17,7 @@ height = 98.0
 [node name="Fluid_Grid" type="Node2D"]
 
 [node name="Roof_Debug" type="Position2D" parent="."]
+visible = false
 position = Vector2( 0, -128 )
 __meta__ = {
 "_edit_group_": true

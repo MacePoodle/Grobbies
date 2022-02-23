@@ -4,7 +4,7 @@ extends KinematicBody2D
 
 export var TOPSPEED : Vector2
 export var DIRECTION : int   #1 = North, 2 = South, 3= East, 4 = West
-export var GRAVITY: int = -100
+export var GRAVITY: int = -10
 
 
 
