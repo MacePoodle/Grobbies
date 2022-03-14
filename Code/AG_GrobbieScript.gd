@@ -4,20 +4,20 @@ extends KinematicBody2D
 
 export var TOPSPEED : Vector2
 export var DIRECTION : int   #1 = North, 2 = South, 3= East, 4 = West
-export var GRAVITY: int = -10
+export var GRAVITY: int = -1
 
 
 
 #BUILT-IN GODOT FUNCTIONS
 func _ready():
 	pass # Replace with function body.
-	TOPSPEED.y = -850
+	TOPSPEED.y = -45
 
 func _physics_process(delta):
 	#pass
 	TOPSPEED.y += delta * GRAVITY
 	
-	var Collision = move_and_collide(TOPSPEED * delta)
+	var Collision = move_and_collide(TOPSPEED)
 	
 	if Collision:
 		TOPSPEED.y = 0
@@ -33,6 +33,6 @@ func _physics_process(delta):
 
 func _on_Area2D_body_exited(body):
 	print("BODY HAS EXITED")
-	TOPSPEED.y = -850
-	GRAVITY = -10
+	TOPSPEED.y = -45
+	GRAVITY = -1
 	
